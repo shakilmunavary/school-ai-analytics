@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+requests
+chromadb
+sentence-transformers
+numpy
+pandas
+openpyxl
+pypdf
+python-multipart
+jinja2

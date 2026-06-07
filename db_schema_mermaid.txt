@@ -1,0 +1,95 @@
+erDiagram
+    grades {
+        integer gradeid
+        text GradeName
+    }
+    students {
+        integer student_id
+        text student_first_name
+        text gender
+        text student_last_name
+        text dob
+        text address
+        integer DayScholor
+        integer HostelScholor
+        integer grade_id
+    }
+    Subjects_Grade {
+        integer SubjectId
+        text SubjectName
+        integer GradeId
+    }
+    Marks {
+        integer Student_Id
+        integer GradeId
+        integer SubjectId
+        real Mark
+    }
+    AdmissionFees {
+        integer id
+        integer StudentId
+        text FiscalYear
+        real AmountPaid
+    }
+    TransportOpted {
+        integer id
+        integer StudentId
+        text RouteOpted
+        text FiscalYear
+    }
+    TransportFeesDetails {
+        integer id
+        integer Studentid
+        text Route
+        real Amount
+        text DatePai
+        text FiscalYear
+    }
+    HostelDetails {
+        integer id
+        integer studentId
+        text FiscalYear
+        real FeesPaid
+    }
+    Staff {
+        integer id
+        text first_name
+        text last_name
+        text DOB
+    }
+    Staff_Subject {
+        integer id
+        integer staffId
+        integer Subjectid
+    }
+    PTM_Report {
+        integer id
+        integer studentId
+        integer GradeId
+        integer staffId
+        text staffcomments
+        integer staffRating
+        text parentscomments
+        integer ParentsRatingToTeaching
+    }
+    Events {
+        integer id
+        text Event_Name
+        text Date
+        text More_Details
+    }
+
+    students ||--|| grades : "grade_id"
+    Subjects_Grade ||--|| grades : "GradeId"
+    Marks ||--|| Subjects_Grade : "SubjectId"
+    Marks ||--|| grades : "GradeId"
+    Marks ||--|| students : "Student_Id"
+    AdmissionFees ||--|| students : "StudentId"
+    TransportOpted ||--|| students : "StudentId"
+    TransportFeesDetails ||--|| students : "Studentid"
+    HostelDetails ||--|| students : "studentId"
+    Staff_Subject ||--|| Subjects_Grade : "Subjectid"
+    Staff_Subject ||--|| Staff : "staffId"
+    PTM_Report ||--|| Staff : "staffId"
+    PTM_Report ||--|| grades : "GradeId"
+    PTM_Report ||--|| students : "studentId"

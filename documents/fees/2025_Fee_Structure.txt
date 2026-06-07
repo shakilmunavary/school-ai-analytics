@@ -1,0 +1,20 @@
+
+SCHOOL FEE STRUCTURE
+
+Grade 1-5:
+Tuition Fee: 15000
+
+Grade 6-8:
+Tuition Fee: 20000
+
+Grade 9-10:
+Tuition Fee: 25000
+
+Grade 11-12:
+Tuition Fee: 30000
+
+Transport Fee:
+5000 Per Year
+
+Exam Fee:
+1500 Per Year

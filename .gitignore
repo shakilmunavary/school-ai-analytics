@@ -1,0 +1,11 @@
+# Ignore database and vector files
+school.db
+vector_db/
+
+# Ignore executables
+*.exe
+
+# Ignore environment folder
+venv/
+__pycache__/
+

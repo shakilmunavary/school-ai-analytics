@@ -1,0 +1,95 @@
+=== MASTER DATABASE COLD SCHEMA REFERENCE LAYER ===
+
+Table: grades
+  - Column: gradeid (INTEGER)
+  - Column: GradeName (TEXT)
+
+Table: students
+  - Column: student_id (INTEGER)
+  - Column: student_first_name (TEXT)
+  - Column: gender (TEXT)
+  - Column: student_last_name (TEXT)
+  - Column: dob (TEXT)
+  - Column: address (TEXT)
+  - Column: DayScholor (INTEGER)
+  - Column: HostelScholor (INTEGER)
+  - Column: grade_id (INTEGER)
+  - Linkage Join: grade_id references grades(gradeid)
+
+Table: Subjects_Grade
+  - Column: SubjectId (INTEGER)
+  - Column: SubjectName (TEXT)
+  - Column: GradeId (INTEGER)
+  - Linkage Join: GradeId references grades(gradeid)
+
+Table: Marks
+  - Column: Student_Id (INTEGER)
+  - Column: GradeId (INTEGER)
+  - Column: SubjectId (INTEGER)
+  - Column: Mark (REAL)
+  - Linkage Join: SubjectId references Subjects_Grade(SubjectId)
+  - Linkage Join: GradeId references grades(gradeid)
+  - Linkage Join: Student_Id references students(student_id)
+
+Table: AdmissionFees
+  - Column: id (INTEGER)
+  - Column: StudentId (INTEGER)
+  - Column: FiscalYear (TEXT)
+  - Column: AmountPaid (REAL)
+  - Linkage Join: StudentId references students(student_id)
+
+Table: TransportOpted
+  - Column: id (INTEGER)
+  - Column: StudentId (INTEGER)
+  - Column: RouteOpted (TEXT)
+  - Column: FiscalYear (TEXT)
+  - Linkage Join: StudentId references students(student_id)
+
+Table: TransportFeesDetails
+  - Column: id (INTEGER)
+  - Column: Studentid (INTEGER)
+  - Column: Route (TEXT)
+  - Column: Amount (REAL)
+  - Column: DatePai (TEXT)
+  - Column: FiscalYear (TEXT)
+  - Linkage Join: Studentid references students(student_id)
+
+Table: HostelDetails
+  - Column: id (INTEGER)
+  - Column: studentId (INTEGER)
+  - Column: FiscalYear (TEXT)
+  - Column: FeesPaid (REAL)
+  - Linkage Join: studentId references students(student_id)
+
+Table: Staff
+  - Column: id (INTEGER)
+  - Column: first_name (TEXT)
+  - Column: last_name (TEXT)
+  - Column: DOB (TEXT)
+
+Table: Staff_Subject
+  - Column: id (INTEGER)
+  - Column: staffId (INTEGER)
+  - Column: Subjectid (INTEGER)
+  - Linkage Join: Subjectid references Subjects_Grade(SubjectId)
+  - Linkage Join: staffId references Staff(id)
+
+Table: PTM_Report
+  - Column: id (INTEGER)
+  - Column: studentId (INTEGER)
+  - Column: GradeId (INTEGER)
+  - Column: staffId (INTEGER)
+  - Column: staffcomments (TEXT)
+  - Column: staffRating (INTEGER)
+  - Column: parentscomments (TEXT)
+  - Column: ParentsRatingToTeaching (INTEGER)
+  - Linkage Join: staffId references Staff(id)
+  - Linkage Join: GradeId references grades(gradeid)
+  - Linkage Join: studentId references students(student_id)
+
+Table: Events
+  - Column: id (INTEGER)
+  - Column: Event_Name (TEXT)
+  - Column: Date (TEXT)
+  - Column: More_Details (TEXT)
+
