@@ -1,12 +1,20 @@
-To give your README the professional impact it needs, I have added a section for the **Architecture Diagram** and a detailed **Institutional Benefits** section. These will help school administrators immediately understand the value proposition of your AI workspace.
 
-Here is the updated **`README.md`** content.
+
 
 ---
 
 # School AI Analytics Dashboard
 
 A high-performance, multi-agent AI workspace designed to analyze student performance, attendance, and financial data in real-time. This solution uses a **Multi-Agent Orchestration Engine** to translate natural language queries into actionable insights, providing an intuitive dashboard for academic management.
+
+<img width="1912" height="962" alt="image" src="https://github.com/user-attachments/assets/9eeaf679-f327-461d-bdd8-0985404e9856" />
+
+<img width="1911" height="920" alt="image" src="https://github.com/user-attachments/assets/1b6b0145-8404-4d30-a7f3-051a5e011b7b" />
+
+<img width="1580" height="800" alt="image" src="https://github.com/user-attachments/assets/21897b73-8666-47a5-b37d-21ec359bb720" />
+
+
+
 
 ## 🏗️ Architecture Overview
 
